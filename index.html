@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АвтоСТО Буча | Професійне обслуговування авто</title>
+  <meta name="description" content="АвтоСТО Буча — повне спектр автосервісних послуг: заміна олії, гальма, діагностика, шиномонтаж, ремонт двигуна. Чесні ціни, гарантія, онлайн-запис.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/src/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+  <div id="app">
+    <header class="header" role="banner">
+      <nav class="nav container" aria-label="Головна навігація">
+        <a href="#" class="logo" aria-label="АвтоСТО Буча Головна">
+<img src="/logo.png" alt="" class="logo-img" aria-hidden="true">
+          <span class="logo-text">АвтоСТО Буча</span>
+        </a>
+        <div class="nav-links">
+          <a href="#services" class="nav-link">Послуги</a>
+          <a href="#prices" class="nav-link">Ціни</a>
+          <a href="#about" class="nav-link">Про нас</a>
+          <a href="#reviews" class="nav-link">Відгуки</a>
+          <a href="#contact" class="nav-link btn btn-primary">Запис на сервіс</a>
+        </div>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Відкрити меню">
+          <span class="hamburger"></span>
+        </button>
+      </nav>
+      <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Мобільне меню">
+        <button class="mobile-menu-close" aria-label="Закрити меню" aria-controls="mobileMenu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <a href="#services" class="mobile-link">Послуги</a>
+        <a href="#prices" class="mobile-link">Ціни</a>
+        <a href="#about" class="mobile-link">Про нас</a>
+        <a href="#reviews" class="mobile-link">Відгуки</a>
+        <a href="#contact" class="mobile-link btn btn-primary">Запис на сервіс</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="hero" class="hero" aria-labelledby="heroTitle">
+        <div class="hero-3d" aria-hidden="true">
+          <canvas id="heroCanvas"></canvas>
+          <div class="hero-3d-overlay"></div>
+        </div>
+        <div class="container hero-content">
+          <span class="hero-badge" aria-hidden="true">
+            <span class="badge-pulse"></span>
+            Відкриті щодня 8:00–20:00
+          </span>
+          <h1 id="heroTitle" class="hero-title" aria-label="Професійне обслуговування авто в Бучі">
+            <span class="title-line"><span class="word" data-word="Професійне"></span></span>
+            <span class="title-line title-accent"><span class="word" data-word="обслуговування"></span> <span class="word" data-word="авто"></span></span>
+            <span class="title-line"><span class="word" data-word="в"></span> <span class="word" data-word="Бучі"></span></span>
+          </h1>
+          <p class="hero-subtitle" id="heroSubtitle" aria-hidden="true"></p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary btn-lg">Записатися онлайн</a>
+            <a href="tel:+380671234567" class="btn btn-outline btn-lg">📞 +38 (067) 123-45-67</a>
+          </div>
+          <div class="hero-stats" role="list" aria-label="Статистика сервісу">
+            <div class="stat" role="listitem"><span class="stat-value" data-count="12">0</span><span class="stat-label">Років досвіду</span></div>
+            <div class="stat" role="listitem"><span class="stat-value" data-count="8500">0</span><span class="stat-label">Задоволених клієнтів</span></div>
+            <div class="stat" role="listitem"><span class="stat-value" data-count="4">0</span><span class="stat-label">Майстри-діагностів</span></div>
+            <div class="stat" role="listitem"><span class="stat-value" data-count="24">0</span><span class="stat-label">Місяців гарантії</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services section" aria-labelledby="servicesTitle">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-tag">Що ми робимо</span>
+            <h2 id="servicesTitle" class="section-title">Наші<br>послуги</h2>
+          </header>
+          <div class="services-grid" id="servicesGrid"></div>
+        </div>
+      </section>
+
+      <section id="prices" class="prices section" aria-labelledby="pricesTitle">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-tag">Прозорі ціни</span>
+            <h2 id="pricesTitle" class="section-title">Популярні<br>послуги та ціни</h2>
+            <p class="section-subtitle">Остаточна вартість залежить від марки авто та стану. Телефонуйте або записуйтеся на безкоштовну діагностику.</p>
+          </header>
+          <div class="prices-tabs" role="tablist" aria-label="Категорії послуг" id="pricesTabs">
+            <button role="tab" class="tab-btn active" data-category="all" aria-selected="true">Все</button>
+            <button role="tab" class="tab-btn" data-category="maintenance" aria-selected="false">ТО та олії</button>
+            <button role="tab" class="tab-btn" data-category="brakes" aria-selected="false">Гальма</button>
+            <button role="tab" class="tab-btn" data-category="suspension" aria-selected="false">Підвіска</button>
+            <button role="tab" class="tab-btn" data-category="engine" aria-selected="false">Двигун</button>
+            <button role="tab" class="tab-btn" data-category="tires" aria-selected="false">Шиномонтаж</button>
+            <button role="tab" class="tab-btn" data-category="diagnostics" aria-selected="false">Діагностика</button>
+          </div>
+          <div class="prices-table-wrapper">
+            <table class="prices-table" id="pricesTable">
+              <thead>
+                <tr>
+                  <th>Послуга</th>
+                  <th>Ціна (грн)</th>
+                  <th>Тривалість</th>
+                </tr>
+              </thead>
+              <tbody id="pricesBody"></tbody>
+            </table>
+          </div>
+          <div class="prices-note">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span>Ціни за роботу без матеріалів. Точна вартість — після огляду авто. Запис на діагностику — безкоштовно.</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about section" aria-labelledby="aboutTitle">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-content">
+              <header class="section-header section-header-left">
+                <span class="section-tag">АвтоСТО Буча</span>
+                <h2 id="aboutTitle" class="section-title">Чому образують<br>нас</h2>
+              </header>
+              <div class="about-points">
+                <div class="about-point">
+                  <div class="point-icon">🔧</div>
+                  <div>
+                    <h3>Досвідчені майстри</h3>
+                    <p>Кваліфіковані спеціалісти з сертифікатами та стажем від 5 років. Регулярно проходять навчання.</p>
+                  </div>
+                </div>
+                <div class="about-point">
+                  <div class="point-icon">🛠</div>
+                  <div>
+                    <h3>Сучасне обладнання</h3>
+                    <p>Стенди для діагностики, ліфти, обладнання для шиномонтажу, стійки для розвал-сходження.</p>
+                  </div>
+                </div>
+                <div class="about-point">
+                  <div class="point-icon">🔍</div>
+                  <div>
+                    <h3>Чесна діагностика</h3>
+                    <p>Не навязуємо зайві роботи. Показуємо проблему, пояснюємо варіанти вирішення, ви обираєте.</p>
+                  </div>
+                </div>
+                <div class="about-point">
+                  <div class="point-icon">⚡</div>
+                  <div>
+                    <h3>Швидко та в термін</h3>
+                    <p>90% робіт виконуємо за день. Маємо на складі популярні запчастини та расходники.</p>
+                  </div>
+                </div>
+                <div class="about-point">
+                  <div class="point-icon">📋</div>
+                  <div>
+                    <h3>Гарантія 24 міс.</h3>
+                    <p>На всі види робіт та запчастини. Якщо щось не так — виправляємо за свій рахунок.</p>
+                  </div>
+                </div>
+                <div class="about-point">
+                  <div class="point-icon">💰</div>
+                  <div>
+                    <h3>Прозорі ціни</h3>
+                    <p>Розрахунок до старту робіт. Без прихованих доплат. Оплата карткою або готівкою.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="about-image">
+              <div class="about-img-placeholder" aria-hidden="true">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 14h8"/><path d="M12 4v4"/><circle cx="8" cy="20" r="2"/><circle cx="16" cy="20" r="2"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="reviews section" aria-labelledby="reviewsTitle">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-tag">Відгуки клієнтів</span>
+            <h2 id="reviewsTitle" class="section-title">Що кажуть<br>про нас</h2>
+          </header>
+          <div class="reviews-grid" id="reviewsGrid"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section" aria-labelledby="contactTitle">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-tag">Запис на сервіс</span>
+            <h2 id="contactTitle" class="section-title">Запишіться на<br>зручний час</h2>
+            <p class="section-subtitle">Оберемо вільний слот, підготуємо все необхідне. Діагностика при записі — безкоштовна.</p>
+          </header>
+          <div class="contact-grid">
+            <form class="booking-form" id="bookingForm" novalidate>
+              <div class="form-row">
+                <label for="bName">Ваше ім'я *</label>
+                <input type="text" id="bName" name="name" required autocomplete="name" placeholder="Іван Петренко">
+              </div>
+              <div class="form-row">
+                <label for="bPhone">Телефон *</label>
+                <input type="tel" id="bPhone" name="phone" required autocomplete="tel" placeholder="+38 (___) ___-__-__" inputmode="tel">
+              </div>
+              <div class="form-row">
+                <label for="bCar">Марка та модель авто *</label>
+                <input type="text" id="bCar" name="car" required autocomplete="off" placeholder="Toyota Camry 2019">
+              </div>
+              <div class="form-row">
+                <label for="bService">Послуга / Проблема *</label>
+                <select id="bService" name="service" required>
+                  <option value="">Оберіть послугу</option>
+                  <option value="maintenance">ТО / Заміна олії</option>
+                  <option value="brakes">Гальмівна система</option>
+                  <option value="suspension">Підвіска / Розвал-сходження</option>
+                  <option value="engine">Двигун / КПП</option>
+                  <option value="tires">Шиномонтаж / Балансування</option>
+                  <option value="diagnostics">Діагностика / Чек-інд</option>
+                  <option value="electrics">Електрика / АКБ</option>
+                  <option value="ac">Клімат-контроль / Кондиціонер</option>
+                  <option value="other">Інше / Не знаю</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="bDate">Бажана дата *</label>
+                <input type="date" id="bDate" name="date" required min="">
+              </div>
+              <div class="form-row">
+                <label for="bTime">Бажаний час *</label>
+                <select id="bTime" name="time" required>
+                  <option value="">Оберіть час</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                </select>
+              </div>
+              <div class="form-row full-width">
+                <label for="bComment">Коментар</label>
+                <textarea id="bComment" name="comment" rows="3" placeholder="Додаткові деталі: що турбує, які запчастини потрібні тощо..."></textarea>
+              </div>
+              <input type="hidden" name="botcheck" tabindex="-1" autocomplete="off">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Замовити дзвінок для підтвердження</button>
+              <p class="form-note">Ми передзвонимо за 15 хвилин для підтвердження запису. Без спаму.</p>
+            </form>
+            <div class="contact-info">
+              <h3>Контакти</h3>
+              <div class="info-items">
+                <div class="info-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>вул. Київська 123, Буча, Київська обл., 08292</span>
+                </div>
+                <div class="info-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <span><a href="tel:+380671234567">+38 (067) 123-45-67</a><br><a href="tel:+380445550123">+38 (044) 555-01-23</a></span>
+                </div>
+                <div class="info-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <span><a href="mailto:info@autosto-bucha.com">info@autosto-bucha.com</a></span>
+                </div>
+                <div class="info-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6a6 6 0 0 1 6 6v8"/></svg>
+                  <span>Пн–Пт: 8:00–20:00<br>Сб: 9:00–18:00<br>Нд: 10:00–16:00</span>
+                </div>
+              </div>
+              <div class="map-placeholder" aria-label="Карта розташування">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <p>Наш бокс — біля ТОВ «Епіцентр К», виїзд з кола по вул. Київській</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="logo" aria-label="АвтоСТО Буча Головна">
+<img src="/logo.png" alt="" class="logo-img" aria-hidden="true">
+              <span class="logo-text">АвтоСТО Буча</span>
+            </a>
+            <p>Професійне автосервісне обслуговування в Бучі з 2012 року. Якість, чесність, гарантія.</p>
+          </div>
+          <nav class="footer-nav" aria-label="Послуги">
+            <h4>Послуги</h4>
+            <ul>
+              <li><a href="#services">ТО та заміна олії</a></li>
+              <li><a href="#services">Гальмівна система</a></li>
+              <li><a href="#services">Підвіска та рульове</a></li>
+              <li><a href="#services">Двигун та КПП</a></li>
+              <li><a href="#services">Шиномонтаж</a></li>
+              <li><a href="#services">Комп'ютерна діагностика</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-nav" aria-label="Інформація">
+            <h4>Інформація</h4>
+            <ul>
+              <li><a href="#prices">Ціни</a></li>
+              <li><a href="#about">Про нас</a></li>
+              <li><a href="#reviews">Відгуки</a></li>
+              <li><a href="#contact">Запис на сервіс</a></li>
+              <li><a href="#">Гарантія</a></li>
+              <li><a href="#">Акції</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-nav" aria-label="Контакти">
+            <h4>Контакти</h4>
+            <ul>
+              <li>вул. Київська 123, Буча</li>
+              <li><a href="tel:+380671234567">+38 (067) 123-45-67</a></li>
+              <li><a href="mailto:info@autosto-bucha.com">info@autosto-bucha.com</a></li>
+              <li>Пн–Пт 8:00–20:00, Сб 9:00–18:00</li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 АвтоСТО Буча. Всі права захищені.</p>
+          <div class="footer-legal">
+            <a href="#">Політика приватності</a>
+            <a href="#">Умови використання</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer" role="region" aria-label="Сповіщення" aria-live="polite"></div>
+  </div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
